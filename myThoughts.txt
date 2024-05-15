@@ -1,0 +1,72 @@
+talking with the team
+
+2 pointer solution
+array (i) and another array (j)
+iterative compare and push conditionally
+
+set function
+if you have an array, give it to the set function, it will return a new array with unique IDs
+
+
+*results* obj ['key'] = value
+
+iterate over the array each time pushing back to the results object
+
+function isdue duedate submission duedate
+using parse(submissiuion) due < parse(duedate)
+if statement if they submit late?
+
+
+BILL'S THOUGHTS
+
+"i want to reformat the obj. learner submissions"
+    go through the object
+    find the same learner IDs
+    for each learner ID, create new object->array
+    fill respective data into each object
+
+
+learner id w/ assignment id need to 
+
+const assignmentgroup
+const learner submissions
+
+recognize different students, calculate scores, avg, etc.
+
+creating 2 objects  in an array ?!?
+
+went through learner array and asked to find each unique id and then inside an object placed the assignments in keys and then objects in those keys
+
+with iterator he referenced the key of the object
+
+used .find (the find function)
+
+
+
+
+JAKI'S BUCKETS
+
+course info
+    id, name
+
+assignment group
+    id, name, course id, group weight, assignments
+
+submission
+    submitted at 
+    score
+
+assignments
+    id
+    name
+    due at
+    points possible
+
+learner submissions
+    learner id 
+    assignment id 
+    submission
+
+
+
+
