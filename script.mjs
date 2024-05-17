@@ -118,10 +118,17 @@ LearnerSubmissions.forEach(submission => {
       };
     }
 
-// updating the learner data with scores and incrementing the number of assignments
-    result[learnerID].totalScore += submission.submission.score;
-    result[learnerID].scores[assignmentID] = submission.submission.score / assignment.points_possible;
-    result[learnerID].numberOfAssignments++;
+//checking for late assignments
+const dueDate = new Date(assignment.due_at);
+const submittedDate = new Date(submission.submission.submitted_at);
+const isLate = submittedDate > dueDate;
+
+
+// updating the learner data with scores and incrementing the number of assignments, adding the late penalty
+  const score = isLate ? submission.submission.score * 0.9 : submission.submission.score;
+  result[learnerID].totalScore += score;
+  result[learnerID].scores[assignmentID] = score / assignment.points_possible;
+  result[learnerID].numberOfAssignments++;
   }
 });
 
