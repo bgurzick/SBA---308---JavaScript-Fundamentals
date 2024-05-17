@@ -82,70 +82,70 @@ const LearnerSubmissions = [
 
 console.log('');
 
-//verify that course IDs match with if/else statement
+// SBA REQUIRED FUNCTION
+function getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions) {
 
-    if (CourseInfo.id != AssignmentGroup.course_id) {
-      throw new Error("Whoa, partner! The Course IDs don't match!");
+
+// trying to verify that the course IDs match
+  if (CourseInfo.id !== AssignmentGroup.course_id) {
+    throw new Error("Whoa, partner! The Course IDs don't match!");
   }
-console.log("You're good, bro, the Course IDs match.");
+  console.log("You're good, bro, the Course IDs match.");
 
-//just for space in my terminal
-console.log('');
-//I used != instead of !==, because it technically doesn't matter if the course ID is accidentally put in as a string instead of a integer, as long as the characters match
+//trying to filter out assignments that aren't due yet
+  const currentDate = new Date("2024-05-16");
+  const currentAssignmentGroup = AssignmentGroup.assignments.filter(function(assignment) {
+    const dueDate = new Date(assignment.due_at);
+    return dueDate <= currentDate && assignment.id !== 3;
+  });
 
+  const result = [];
 
-//I want to make a new array to filter-out any assignments that aren't yet due
-const currentDate = new Date("2024-05-16");
+// trying to use forEach to iterate for the relevant ID properties; using FIND
+LearnerSubmissions.forEach(submission => {
+  const learnerID = submission.learner_id;
+  const assignmentID = submission.assignment_id;
+  const assignment = currentAssignmentGroup.find(Q => Q.id === assignmentID); 
 
-const currentAssignmentGroup = AssignmentGroup.assignments.filter(function(assignment) {
-  const dueDate = new Date(assignment.due_at);
-  return dueDate <= currentDate;
+// searching for assignments in the arrays and storing scores;
+  if (assignment) {
+    if (!result[learnerID]) {
+      result[learnerID] = {
+        id: learnerID,
+        totalScore: 0,
+        numberOfAssignments: 0,
+        scores: {} 
+      };
+    }
+
+// updating the learner data with scores and incrementing the number of assignments
+    result[learnerID].totalScore += submission.submission.score;
+    result[learnerID].scores[assignmentID] = submission.submission.score / assignment.points_possible;
+    result[learnerID].numberOfAssignments++;
+  }
 });
 
-console.log("The Current Assignment Group Array",currentAssignmentGroup);
+// trying to calculate the average for each learnerID
+for (const learnerID in result) {
+  const learner = result[learnerID];
+  let totalAvg = 0; 
 
-//just for space
-console.log('');
-
-
-//here I'm trying to filter assignments by learner_ID and I'm using the currentAssignmentGroup array from before, so the future assignment has already been filtered out
-
-function submittedAssignments(learnerId) {
-  const learnerAssignments = [];
-  for (const assignment of currentAssignmentGroup) {
-    for (const submission of LearnerSubmissions) {
-      if (submission.learner_id === learnerId && submission.assignment_id === assignment.id) {
-        learnerAssignments.push({
-          ...assignment,
-          submission: submission.submission
-        });
-        break;
-      }
-    }
-    if (!learnerAssignments.find(a => a.id === assignment.id)) {
-      learnerAssignments.push({
-        ...assignment,
-        submission: null
-      });
-    }
+  for (const assignmentID in learner.scores) {
+    totalAvg += learner.scores[assignmentID];
   }
-  return learnerAssignments;
+  totalAvg /= learner.numberOfAssignments;
+
+//including the individual assignment scores in the result/output
+  result[learnerID] = {
+    id: learner.id,
+    avg: totalAvg,
+    ...learner.scores 
+  };
 }
 
-//here I'm trying to pull the assignments for each learner ID, respectively
+return Object.values(result);
 
-const learner125Assignments = submittedAssignments(125);
-console.log("Assignments for learner_id: 125", learner125Assignments);
+}
 
-const learner132Assignments = submittedAssignments(132);
-console.log("Assignments for learner_id: 132", learner132Assignments);
-
-
-
-//here I'm trying to 
-
-
-
-
-//start at the ending, the required function
-// function getLearnerData(courseinfo,assgrp,[learnerSub])
+const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
+console.log(result);
