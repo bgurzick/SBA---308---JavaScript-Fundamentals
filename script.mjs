@@ -33,16 +33,26 @@ const AssignmentGroup = {
 
 
   //verify that course IDs match with if/else statement
-function doTheyMatch(){
-    if (CourseInfo.id === AssignmentGroup.course_id) {
-      console.log("Yeah, bro, IDs match.");
-  } else {
-        console.log("Whoa, partner, IDs don't match.");
+
+    if (CourseInfo.id != AssignmentGroup.course_id) {
+      throw new Error("Whoa, partner! The Course IDs don't match!");
   }
-}
-doTheyMatch()
+console.log("You're good, bro, the Course IDs match.");
+
+//I used != instead of !==, because it technically doesn't matter if the course ID is accidentally put in as a string instead of a integer, as long as the characters match
 
 
+
+
+
+
+
+
+
+
+
+
+//
 
 
 
