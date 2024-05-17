@@ -21,7 +21,18 @@ TESTING THE CODE
 -Weighted avg, not avg for each
 
 
-
+IMPORTANT ITEMS ON GRADING RUBRIC
+-use at least 2  if/else statements
+-use try/catch statements to manage potential errors
+-at least 2 different types of loops
+-at least one loop control: break or continue
+-create arrays and objects
+-retrieve/manipulate/remove items in an array or object
+-use functions
+-successful program output
+-program runs without errors 
+-commit frequently to Git Hub
+-README File
 
 
 
