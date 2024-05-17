@@ -42,8 +42,15 @@ console.log("You're good, bro, the Course IDs match.");
 //I used != instead of !==, because it technically doesn't matter if the course ID is accidentally put in as a string instead of a integer, as long as the characters match
 
 
+//I want to make a new array to filter-out any assignments that aren't yet due
+const currentDate = new Date("2024-05-16");
 
+const currentAssignmentGroup = AssignmentGroup.assignments.filter(function(assignment) {
+  const dueDate = new Date(assignment.due_at);
+  return dueDate <= currentDate;
+});
 
+console.log(currentAssignmentGroup);
 
 
 
