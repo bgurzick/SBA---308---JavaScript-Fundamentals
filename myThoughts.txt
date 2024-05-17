@@ -3,21 +3,21 @@ PROCESSING THE ASSIGNMENT
 
 NEED TO:
 -make sure IDs === (done)
--find & sort 
--arithmetic
+-find (done)
+-arithmetic (done)
 -filter dates (done)
--fill new array w/ object1 and object2 ??
--deduct 10% for late assignment 
+-fill new array w/ object1 and object2 ?? (done)
+-deduct 10% for late assignment (done)
 -
 
 
 TESTING THE CODE
 -Does the AssignmentGroup Course ID match the CourseInfo Course ID ? (Throw an Error) (done)
--what if points possible is 0?
+-what if points possible is 0? (done?)
 -what if num instead of string? (done)
 
 -Did you sort out assignments not yet due? (done)
--Weighted avg, not avg for each
+-Average (done)
 
 
 IMPORTANT ITEMS ON GRADING RUBRIC
@@ -28,10 +28,10 @@ IMPORTANT ITEMS ON GRADING RUBRIC
 -create arrays and objects (done)
 -retrieve/manipulate/remove items in an array or object (done)
 -use functions (done)
--successful program output
--program runs without errors 
+-successful program output (done?)
+-program runs without errors  (done)
 -commit frequently to Git Hub (done)
--README File
+-README File (done)
 
 
 
