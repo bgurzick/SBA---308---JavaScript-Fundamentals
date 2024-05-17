@@ -2,36 +2,35 @@ PROCESSING THE ASSIGNMENT
 -create function getLearnerData(CourseInfo, AssignmentGroup, [LearnerSubmission]) to return an array of objects with requested info
 
 NEED TO:
--make sure IDs ===
+-make sure IDs === (done)
 -find & sort 
 -arithmetic
--filter dates
--fill new array w/ object1 and object2
--call by key
+-filter dates (done)
+-fill new array w/ object1 and object2 ??
 -deduct 10% for late assignment 
 -
 
 
 TESTING THE CODE
--Does the AssignmentGroup Course ID match the CourseInfo Course ID ? (Throw an Error)
+-Does the AssignmentGroup Course ID match the CourseInfo Course ID ? (Throw an Error) (done)
 -what if points possible is 0?
--what if num instead of string?
+-what if num instead of string? (done)
 
--Did you sort out assignments not yet due?
+-Did you sort out assignments not yet due? (done)
 -Weighted avg, not avg for each
 
 
 IMPORTANT ITEMS ON GRADING RUBRIC
--use at least 2  if/else statements
--use try/catch statements to manage potential errors
--at least 2 different types of loops
--at least one loop control: break or continue
--create arrays and objects
--retrieve/manipulate/remove items in an array or object
--use functions
+-use at least 2  if/else statements (done)
+-use try/catch or other statements to manage potential errors (done - throw new error)
+-at least 2 different types of loops (done)
+-at least one loop control: break or continue (done)
+-create arrays and objects (done)
+-retrieve/manipulate/remove items in an array or object (done)
+-use functions (done)
 -successful program output
 -program runs without errors 
--commit frequently to Git Hub
+-commit frequently to Git Hub (done)
 -README File
 
 
