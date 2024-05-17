@@ -40,7 +40,8 @@ REFLECTION
 
 What could you have done differently during the planning stages of your project to make the execution easier?
 
-    -Well, I did what I'm not supposed to do, I know.  I started building before writing/planning it out, and that made some things more difficult than they probably needed to be.  Building a single function, single array, single object, works okay, but something tricky happens when trying to ge them to all work together. It gets easy to lose the thread.
+    -Well, I did what I'm not supposed to do, I know.  I started building before writing/planning it out, and that made some things more difficult than they probably needed to be.  Building a single function, single array, single object, works okay, but something tricky happens when trying to ge them to all work together. It gets easy to lose the thread.  I actually had to take out some of my requirements and start over with a simpler syntax.
+
 
 Were there any requirements that were difficult to implement? What do you think would make them easier to implement in future projects?
 
