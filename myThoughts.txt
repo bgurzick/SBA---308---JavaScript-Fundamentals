@@ -1,4 +1,35 @@
-talking with the team
+PROCESSING THE ASSIGNMENT 
+-create function getLearnerData(CourseInfo, AssignmentGroup, [LearnerSubmission]) to return an array of objects with requested info
+
+NEED TO:
+-make sure IDs ===
+-find & sort 
+-arithmetic
+-filter dates
+-fill new array w/ object1 and object2
+-call by key
+-deduct 10% for late assignment 
+-
+
+
+TESTING THE CODE
+-Does the AssignmentGroup Course ID match the CourseInfo Course ID ? (Throw an Error)
+-what if points possible is 0?
+-what if num instead of string?
+
+-Did you sort out assignments not yet due?
+-Weighted avg, not avg for each
+
+
+
+
+
+
+
+
+TALKING WITH THE TEAM
+
+LUKAS'S THOUGHTS
 
 2 pointer solution
 array (i) and another array (j)
